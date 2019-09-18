@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class TestServlet
+ * Servlet implementation class TestSQL
  */
-@WebServlet("/TestServlet")
-public class TestServlet extends HttpServlet {
+@WebServlet("/TestSQL")
+public class TestSQL extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TestServlet() {
+    public TestSQL() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -68,7 +68,7 @@ public class TestServlet extends HttpServlet {
 	      System.err.println(e.getMessage());
 	    }
 		
-		response.getWriter().append("Served123 at: ").append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -78,7 +78,5 @@ public class TestServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-	
-	// TRYING TO MAKE IREELEVANT CHANGES
 
 }
