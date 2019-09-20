@@ -11,7 +11,7 @@ public class DB {
 	
 	private DB() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.connection = DriverManager.getConnection(
 					 "jdbc:mysql://localhost/agilitree?user=root&password=coffee111" +
 					 "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");

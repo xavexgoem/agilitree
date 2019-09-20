@@ -33,10 +33,10 @@ public class TestSQL extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		ResultSet results = database.query("SELECT * FROM users");
+		ResultSet results = database.query("SELECT * FROM categories");
 		try {
 			while(results.next()) {
-				String email = results.getString("emailAddress");
+				String email = results.getString("title");
 				System.out.println(email);
 			}
 		} catch (SQLException e) {
