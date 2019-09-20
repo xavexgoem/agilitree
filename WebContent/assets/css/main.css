@@ -11,8 +11,7 @@ ul {
 ul#nav a#login {
 	float: right;
 	left: 650px;
-	position: absolute;
-	
+	position: absolute;	
 }
 
 ul#nav a#groups {
@@ -34,7 +33,6 @@ ul#nav a#fb {
 	position: absolute;
     background: transparent url("../buttons/facebook.png") no-repeat 50% 0%;
     background-size: 20px 20px;	
-
 }
 
 ul#nav a#twitter {
@@ -88,8 +86,6 @@ ul#nav a#events {
 	padding-left: 10px;
 }
 
-
-
 p.intro{
 	text-align: center;
 	font-size: 20px;
@@ -117,7 +113,6 @@ body {
 	background-color: #313036;
 	color: #dbdbdb;
 	height: 20px;
-
 }
 
 #wrapintro {

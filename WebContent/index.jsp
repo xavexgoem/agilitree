@@ -29,7 +29,7 @@
 </div>
 <div id="wrapintro">
 	<p>
-		Carl's Card shop opened in March 2019. We have the best selection of table top games and products in the Eau Claire area. Several days a week we host various events
+		Carl's Card Shop opened in March 2019. We have the best selection of table top games and products in the Eau Claire area. Several days a week we host various events
 		for anyone to join. If you are a new or experienced player come on down and check out all that is happening.
 	</p>
 </div>
@@ -45,7 +45,7 @@
 	<h2 id="desctit">Rokket Revolt</h2>
 	<p>Blah blah content. Something something new deck I'm just gonna go to sleep after I test the capacity of this box by just kinda casually typing and typing until it gets to where I need it to be. I'll worry about the whole fixing the image to the left later.</p>
 	<br>
-	<p>Also, pixels aren't absolute, who knew? Me, I knew.
+	<p>Also, pixels aren't absolute, who knew? Me, I knew.</p>
 	</div>
 </div>
 </body>
