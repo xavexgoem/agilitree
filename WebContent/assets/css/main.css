@@ -1,3 +1,194 @@
-h1 {
+h1.title {
 	color: red;
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	position: relative;
+}
+
+ul#nav a#login {
+	float: right;
+	left: 650px;
+	position: absolute;
+	
+}
+
+ul#nav a#groups {
+	float: right;
+	left: 590px;
+	position: absolute;	
+}
+
+
+ul#nav a#signup {
+	float: right;
+	left: 700px;
+	position: absolute;
+}
+
+ul#nav a#fb {
+	float: right;
+	left: 5px;
+	position: absolute;
+    background: transparent url("../buttons/facebook.png") no-repeat 50% 0%;
+    background-size: 20px 20px;	
+
+}
+
+ul#nav a#twitter {
+	float: right;
+	left: 30px;
+	position: absolute;
+    background: transparent url("../buttons/twitter.png") no-repeat 50% 0%;
+    background-size: 20px 20px;	
+}
+
+ul#nav a#twitch {
+	float: right;
+	left: 55px;
+	position: absolute;
+    background: transparent url("../buttons/twitch.png") no-repeat 50% 0%;
+    background-size: 20px 20px;	
+}
+
+ul#nav a#help {
+	float: right;
+	left: 760px;
+	position: absolute;
+    background: transparent url("../buttons/help.png") no-repeat 50% 0%;
+    background-size: 20px 20px;
+}
+
+ul#nav a#sug {
+	float: right;
+	left: 265px;
+	position: absolute;
+	padding-left: 10px;
+}
+
+ul#nav a#home {
+	float: right;
+	left: 100px;
+	position: absolute;
+}
+
+ul#nav a#for {
+	float: right;
+	left: 400px;
+	position: absolute;
+	padding-left: 10px;
+}
+
+ul#nav a#events {
+	float: right;
+	left: 145px;
+	position: absolute;
+	padding-left: 10px;
+}
+
+
+
+p.intro{
+	text-align: center;
+	font-size: 20px;
+	position: relative;
+}
+
+body {
+    background-size: cover;
+    background-color: #050505;
+}
+
+#wrappert {
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	position: relative;
+	background-color: #313036;
+}
+
+#wrapnav {
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	position: relative;
+	background-color: #313036;
+	color: #dbdbdb;
+	height: 20px;
+
+}
+
+#wrapintro {
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	position: relative;
+	background-color: #313036;
+	color: #dbdbdb;	
+}
+
+#fillerbox {
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	position: relative;
+	background-color: #313036;
+	color: #dbdbdb;
+	overflow: hidden;
+}
+
+#filler1 {
+    width: 266px;
+    float:left;
+    border: 1px solid red;
+}
+
+#filler2 {
+    border: 1px solid green;
+    float: left;
+    width: 266px;
+}
+
+#filler3 {
+	border: 1px solid blue;
+	float: left;
+	width: 262px;
+}
+
+#ygo {
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	position: relative;
+	background-color: #313036;
+	color: #dbdbdb;
+	overflow: hidden;
+}
+
+#ygobanner {
+	background: transparent url("../banner/YGOBanner2.png") 90% 100%;
+    background-size: 350px;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 130px;
+    float:left;
+    border: 1px solid red;
+	color: #dbdbdb;
+}
+
+#ygodesc {
+    border: 1px solid green;
+    float: left;
+    width: 496px;
+    height: 130px;
+ 	color: #dbdbdb;
+ 	text-align: left;
+ 	font-size: 10px;
+}
+
+div#ygodesc h2#desctit {
+	text-align: center;
+	font-size: 15px;
 }
