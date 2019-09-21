@@ -8,8 +8,9 @@
 <title>CCS</title>
 </head>
 <body>
+<div id="fullwrap">
 <div id="wrappert">
-	<h1 class="title">Carl's Card Shop</h1>
+	<h1 class="title"><a id="css"><img src="assets/banner/ccs.png" style="width: 280px;height: 100px;"></a></h1>
 </div>
 <div id="wrapnav">
 <ul id="nav">
@@ -18,12 +19,9 @@
 <li><a id="twitter" href="twitter"><img src="assets/buttons/twitter.png"></a></li>
 <li><a id="twitch" href="twitch"><img src="assets/buttons/twitch.png"></a></li>
 <li><a id="help" href="help"><img src="assets/buttons/help.png"></a></li>
-<li><a id="sug" href="suggestions">Event Suggestions</a></li>
-<li><a id="for" href="forums">Forums</a></li>
 <li><a id="signup" href="signup">Sign up</a></li>
 <li><a id="login" href="login">Login</a></li>
 <li><a id="events" href="calendar">Events Calendar</a></li>
-<li><a id="groups" href="groups">Groups</a></li>
 </ul>
 <br>
 </div>
@@ -34,19 +32,48 @@
 	</p>
 </div>
 <div id="fillerbox">
-	<div id="filler1">Could put large/popular</div>
-	<div id="filler2">Events in divs like this?</div>
+	<div id="filler1">Could put large/popular<br> test test test test<br>test test test test</div>
+	<div id="spacer"></div>
+	<div id="filler2">We could plausibly change these to dropdowns w/ titles. Or links to events. Dunno.</div>
+	<div id="spacer"></div>
 	<div id="filler3">Mini Calendar here maybe?</div>
 </div>
 <br>
 <div id="ygo">
 	<div id="ygobanner"><a href=""><img src=""></a></div>
 	<div id="ygodesc">
-	<h2 id="desctit">Rokket Revolt</h2>
+	<h2 id="ygot">Yu-Gi-Oh!</h2>
 	<p>Blah blah content. Something something new deck I'm just gonna go to sleep after I test the capacity of this box by just kinda casually typing and typing until it gets to where I need it to be. I'll worry about the whole fixing the image to the left later.</p>
 	<br>
 	<p>Also, pixels aren't absolute, who knew? Me, I knew.</p>
 	</div>
 </div>
+<br>
+<div id="mtg">
+	<div id="mtgbanner"><a href=""><img src=""></a></div>
+	<div id="mtgdesc">
+	<h2 id="mtgt">Magic: The Gathering</h2>
+	<p>Blah blah content. Something something new deck I'm just gonna go to sleep after I test the capacity of this box by just kinda casually typing and typing until it gets to where I need it to be. I'll worry about the whole fixing the image to the left later.</p>
+	<br>
+	<p>Also, pixels aren't absolute, who knew? Me, I knew.</p>
+	</div>
+</div>
+<br>
+<div id="nin">
+	<div id="ninbanner"><a href=""><img src=""></a></div>
+	<div id="nindesc">
+	<h2 id="nint">Nintendo</h2>
+	<p>Blah blah content. Something something new game I'm just gonna go to sleep after I test the capacity of this box by just kinda casually typing and typing until it gets to where I need it to be. I'll worry about the whole fixing the image to the left later.</p>
+	<br>
+	<p>Also, pixels aren't absolute, who knew? Me, I knew.</p>
+	</div>
+</div>
+</div>
 </body>
+<br>
+<footer>2019 Carl's Card Shop<br>
+		For more information, help, or any of the above, contact:<br>
+		(1)555-555-5555 OR email dummy@gmail.com
+</footer>
+
 
