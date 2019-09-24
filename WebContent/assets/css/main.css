@@ -1,6 +1,8 @@
 h1.title {
 	color: red;
 	text-align: center;
+	height: 100px;
+	
 }
 
 ul {
@@ -8,23 +10,40 @@ ul {
 	position: relative;
 }
 
+ul#nav a#login:hover{
+	color: #24dfe3;
+	text-shadow: 0px 0.2px;
+}
+
+ul#nav a#signup:hover{
+	color: #24dfe3;
+	text-shadow: 0px 0.2px;
+}
+
+ul#nav a#home:hover{
+	color: #24dfe3;
+	text-shadow: 0px 0.2px;
+}
+
+ul#nav a#events:hover{
+	color: #24dfe3;
+	text-shadow: 0px 0.2px;
+}
+
 ul#nav a#login {
 	float: right;
-	left: 650px;
-	position: absolute;	
+	left: 600px;
+	position: absolute;
+	color: #2ac4c7;
+	text-decoration: none;
 }
-
-ul#nav a#groups {
-	float: right;
-	left: 590px;
-	position: absolute;	
-}
-
 
 ul#nav a#signup {
 	float: right;
-	left: 700px;
+	left: 670px;
 	position: absolute;
+	color: #2ac4c7;
+	text-decoration: none;
 }
 
 ul#nav a#fb {
@@ -59,24 +78,12 @@ ul#nav a#help {
     background-size: 20px 20px;
 }
 
-ul#nav a#sug {
-	float: right;
-	left: 265px;
-	position: absolute;
-	padding-left: 10px;
-}
-
 ul#nav a#home {
 	float: right;
 	left: 100px;
 	position: absolute;
-}
-
-ul#nav a#for {
-	float: right;
-	left: 400px;
-	position: absolute;
-	padding-left: 10px;
+	color: #2ac4c7;
+	text-decoration: none;
 }
 
 ul#nav a#events {
@@ -84,6 +91,8 @@ ul#nav a#events {
 	left: 145px;
 	position: absolute;
 	padding-left: 10px;
+	color: #2ac4c7;
+	text-decoration: none;
 }
 
 p.intro{
@@ -97,12 +106,24 @@ body {
     background-color: #050505;
 }
 
+#fullwrap {
+	top: 10px;
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	position: relative;
+	background-color: #1e1f21;	
+	border: 1px solid #1e1f21;
+	border-radius: 20px 20px 20px 20px;
+	box-shadow: 0px 0px 50px 20px rgba(50,50,50,0.5);
+}
+
 #wrappert {
 	margin: 0 auto;
 	text-align: center;
 	width: 800px;
 	position: relative;
-	background-color: #313036;
+	background-color: #1e1f21;
 }
 
 #wrapnav {
@@ -129,27 +150,47 @@ body {
 	text-align: center;
 	width: 800px;
 	position: relative;
-	background-color: #313036;
 	color: #dbdbdb;
 	overflow: hidden;
+
+	
 }
 
 #filler1 {
-    width: 266px;
+    width: 32.5%;
     float:left;
-    border: 1px solid red;
+    border-top: 1px solid rgba(30,31,33,0.2);
+    border-bottom: 1px solid rgba(30, 31, 330.2);
+    border-radius: 20px 20px 20px 0px;
+ 	background-color: #313036;
+ 	height: 100px;
+
+}
+#spacer {
+	border: 5px solid #1e1f21;
+	float: left;
 }
 
 #filler2 {
-    border: 1px solid green;
     float: left;
-    width: 266px;
+    width: 32.5%;
+    border-top: 1px solid rgba(30,31,33,0.2);
+    border-bottom: 1px solid rgba(30,31,33,0.2);
+	border-radius: 20px 20px 20px 20px;
+	background-color: #313036;
+	height: 100px;
+
 }
 
 #filler3 {
-	border: 1px solid blue;
 	float: left;
-	width: 262px;
+    width: 32.5%;
+    border-top: 1px solid rgba(30,31,33,0.2);
+    border-bottom: 1px solid rgba(30,31,33,0.2);
+	border-radius: 20px 20px 0px 20px;
+	background-color: #313036;
+	height: 100px;
+
 }
 
 #ygo {
@@ -160,30 +201,121 @@ body {
 	background-color: #313036;
 	color: #dbdbdb;
 	overflow: hidden;
+	border: 1.5px solid rgba(239, 234, 77, 0.2);
+	border-radius: 20px 20px 20px 0px;
 }
 
 #ygobanner {
 	background: transparent url("../banner/YGOBanner2.png") 90% 100%;
-    background-size: 350px;
+    background-size: cover;
     background-repeat: no-repeat;
-    width: 300px;
+    width: 33%;
     height: 130px;
     float:left;
-    border: 1px solid red;
 	color: #dbdbdb;
+
 }
 
 #ygodesc {
-    border: 1px solid green;
     float: left;
-    width: 496px;
+    width: 66%;
     height: 130px;
  	color: #dbdbdb;
  	text-align: left;
- 	font-size: 10px;
+ 	font-size: 11px;
+ 	padding-left: 7px;
+
+
 }
 
-div#ygodesc h2#desctit {
+div#ygodesc h2#ygot {
 	text-align: center;
 	font-size: 15px;
+}
+
+#mtg {
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	position: relative;
+	background-color: #313036;
+	color: #dbdbdb;
+	overflow: hidden;
+	border: 1.5px solid rgba(160,39,155,0.2);
+	border-radius: 20px 20px 20px 0px;
+}
+
+#mtgbanner {
+	background: transparent url("../banner/magicbanner.png") 50% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 33%;
+    height: 130px;
+    float:left;
+	color: #dbdbdb;
+
+}
+
+#mtgdesc {
+    float: left;
+    width: 66%;
+    height: 130px;
+ 	color: #dbdbdb;
+ 	text-align: left;
+ 	font-size: 11px;
+ 	padding-left: 7px;
+
+
+}
+
+div#mtgdesc h2#mtgt {
+	text-align: center;
+	font-size: 15px;
+}
+
+#nin {
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	position: relative;
+	background-color: #313036;
+	color: #dbdbdb;
+	overflow: hidden;
+	border: 1.5px solid rgba(221,47,47,0.2);
+	border-radius: 20px 20px 20px 0px;
+}
+
+#ninbanner {
+	background: transparent url("../banner/switchbanner.png") 40% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 33%;
+    height: 130px;
+    float:left;
+	color: #dbdbdb;
+}
+
+#nindesc {
+    float: left;
+    width: 66%;
+    height: 130px;
+ 	color: #dbdbdb;
+ 	text-align: left;
+ 	font-size: 11px;
+ 	padding-left: 7px;
+}
+
+div#nindesc h2#nint {
+	text-align: center;
+	font-size: 15px;
+}
+
+footer{
+	top: 15px;
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	position: relative;
+	color: #dbdbdb;
+	overflow: hidden;
 }
