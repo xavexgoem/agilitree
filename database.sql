@@ -89,6 +89,7 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` VALUES (1,1,'2019-09-30 10:00:00','0019-09-30 12:00:00','A thing happens','So many things happen, it\'s incredible'),(2,2,'2019-10-01 16:00:00','2019-10-01 18:00:00','October things',NULL);
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -151,4 +152,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-25 17:55:17
+-- Dump completed on 2019-09-25 17:59:32
