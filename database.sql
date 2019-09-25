@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `agilitree` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `agilitree`;
 -- MySQL dump 10.13  Distrib 8.0.17, for macos10.14 (x86_64)
 --
 -- Host: 127.0.0.1    Database: agilitree
@@ -72,7 +74,7 @@ DROP TABLE IF EXISTS `events`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `events` (
   `eventID` int(11) NOT NULL,
-  `categoryID` varchar(45) NOT NULL,
+  `categoryID` int(11) NOT NULL,
   `startDateTime` datetime NOT NULL,
   `endDateTime` datetime NOT NULL,
   `title` varchar(45) NOT NULL,
@@ -102,6 +104,7 @@ CREATE TABLE `users` (
   `name` varchar(45) NOT NULL,
   `wantsPushEvents` tinyint(4) NOT NULL,
   `isAdministrator` tinyint(4) NOT NULL,
+  `password` varchar(45) NOT NULL,
   PRIMARY KEY (`emailAddress`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -112,7 +115,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('skolendo@student.cvtc.edu','Sebastian Kolendo',1,1);
+INSERT INTO `users` VALUES ('skolendo@student.cvtc.edu','Sebastian Kolendo',1,1,'');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,4 +151,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-20 18:57:23
+-- Dump completed on 2019-09-25 17:55:17
