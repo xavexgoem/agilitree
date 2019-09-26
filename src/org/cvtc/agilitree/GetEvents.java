@@ -10,19 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/TestSQL")
-public class TestSQL extends HttpServlet {
+@WebServlet("/GetEvents")
+public class GetEvents extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private DB database;
        
-    public TestSQL() {
+    public GetEvents() {
         super();
         database = DB.getInstance();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ResultSet results = database.query("SELECT * FROM categories");
+		ResultSet results = database.query("SELECT * FROM events");
 		try {
 			while(results.next()) {
 				String email = results.getString("title");
