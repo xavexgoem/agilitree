@@ -3,7 +3,7 @@ package org.cvtc.agilitree;
 import java.sql.*;
 
 // this might cause issues if we need more than 1 DB
-// this is accessed solely through DB.getInstance().whatever()
+// this is accessed solely through DB.getInstance()
 public class DB {
 	private static DB instance = null;
 	
@@ -13,7 +13,7 @@ public class DB {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.connection = DriverManager.getConnection(
-					 "jdbc:mysql://localhost/agilitree?user=root&password=coffee111" +
+					 "jdbc:mysql://localhost/agilitree?user=root" +
 					 "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
 		} catch (Exception e) {
 			e.printStackTrace();
