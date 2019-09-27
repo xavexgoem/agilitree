@@ -16,7 +16,13 @@
 		<input type="text" name="lastName" id="contactLastName" value="Burgandy"><br>
 		Email:<br>
 		<input type="text" name="contactEmail" id="contactEmail" value="afternoondelight69@gmail.com"><br><br>
-		<input type="submit" value="Submit">
+		
+		Contact Us:<br>
+		<textarea name="commentsBox" id="contactCommentsBox">
+		Please let us know why you are contacting us today? Might need a new option not sure how 
+		textarea will work feel free to change!
+		</textarea>
+		<br><input type="submit" value="Submit">
 	</form>
 </div>
 </body>
