@@ -16,7 +16,7 @@ public class ServletHelper {
 			int numColumns = metadata.getColumnCount();
 			JSONObject jsonObj = new JSONObject();
 			for(int i = 1; i <= numColumns; i++) {
-				String columnName = metadata.getColumnName(i);
+				String columnName = metadata.getColumnLabel(i);
 				jsonObj.put(columnName, rs.getObject(columnName));
 			}
 			json.put(jsonObj);

@@ -23,8 +23,11 @@ public class GetEvents extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ResultSet results = database.query("SELECT * FROM events");
-		String json = "";
+		ResultSet results = database.query(
+				"SELECT e.title, e.startDateTime, e.endDateTime, e.description, c.title AS category, c.color AS categoryColor "
+				+ "FROM events e, categories c "
+				+ "WHERE e.categoryID = c.categoryID");
+		String json = ""; // NOTE - if the try/catch fails, this will return an empty string. Or something more hilarious.
 		try {
 			json = ServletHelper.ResultSetToJSON(results);
 			System.out.println(json);
