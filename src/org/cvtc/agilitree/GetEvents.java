@@ -1,6 +1,7 @@
 package org.cvtc.agilitree;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -23,15 +24,16 @@ public class GetEvents extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ResultSet results = database.query("SELECT * FROM events");
+		String json = "";
 		try {
-			while(results.next()) {
-				String email = results.getString("title");
-				System.out.println(email);
-			}
+			json = ServletHelper.ResultSetToJSON(results);
+			System.out.println(json);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
+		out.print(json);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
