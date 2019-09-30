@@ -103,8 +103,8 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `emailAddress` varchar(50) NOT NULL,
   `name` varchar(45) NOT NULL,
-  `wantsPushEvents` tinyint(4) NOT NULL,
-  `isAdministrator` tinyint(4) NOT NULL,
+  `wantsPushEvents` tinyint(4),
+  `isAdministrator` tinyint(4),
   `password` varchar(45) NOT NULL,
   PRIMARY KEY (`emailAddress`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
