@@ -1,35 +1,39 @@
+/*Title. Image now.*/
 h1.title {
 	color: red;
 	text-align: center;
 	height: 100px;
-	
 }
-
+/*Navigation bar.*/
 ul {
 	list-style-type: none;
 	position: relative;
 }
-
-ul#nav a#login:hover{
+/*Login button on hover.*/
+ul#nav a#login:hover {
 	color: #24dfe3;
 	text-shadow: 0px 0.2px;
 }
 
-ul#nav a#signup:hover{
+/*Sign up button on hover.*/
+ul#nav a#signup:hover {
 	color: #24dfe3;
 	text-shadow: 0px 0.2px;
 }
 
-ul#nav a#home:hover{
+/*Home button on hover.*/
+ul#nav a#home:hover {
 	color: #24dfe3;
 	text-shadow: 0px 0.2px;
 }
 
-ul#nav a#events:hover{
+/*Events button on hover.*/
+ul#nav a#events:hover {
 	color: #24dfe3;
 	text-shadow: 0px 0.2px;
 }
 
+/*Login button.*/
 ul#nav a#login {
 	float: right;
 	left: 600px;
@@ -38,46 +42,52 @@ ul#nav a#login {
 	text-decoration: none;
 }
 
+/*Signup button.*/
 ul#nav a#signup {
 	float: right;
-	left: 670px;
+	left: 275px;
 	position: absolute;
 	color: #2ac4c7;
 	text-decoration: none;
 }
 
+/*Facebook button.*/
 ul#nav a#fb {
 	float: right;
 	left: 5px;
 	position: absolute;
-    background: transparent url("../buttons/facebook.png") no-repeat 50% 0%;
-    background-size: 20px 20px;	
+	background: transparent url("../buttons/facebook.png") no-repeat 50% 0%;
+	background-size: 20px 20px;
 }
 
+/*Twitter button.*/
 ul#nav a#twitter {
 	float: right;
 	left: 30px;
 	position: absolute;
-    background: transparent url("../buttons/twitter.png") no-repeat 50% 0%;
-    background-size: 20px 20px;	
+	background: transparent url("../buttons/twitter.png") no-repeat 50% 0%;
+	background-size: 20px 20px;
 }
 
+/*Twitch button.*/
 ul#nav a#twitch {
 	float: right;
 	left: 55px;
 	position: absolute;
-    background: transparent url("../buttons/twitch.png") no-repeat 50% 0%;
-    background-size: 20px 20px;	
+	background: transparent url("../buttons/twitch.png") no-repeat 50% 0%;
+	background-size: 20px 20px;
 }
 
+/*Help button.*/
 ul#nav a#help {
 	float: right;
-	left: 760px;
+	left: 775px;
 	position: absolute;
-    background: transparent url("../buttons/help.png") no-repeat 50% 0%;
-    background-size: 20px 20px;
+	background: transparent url("../buttons/help.png") no-repeat 50% 0%;
+	background-size: 20px 20px;
 }
 
+/*Home button.*/
 ul#nav a#home {
 	float: right;
 	left: 100px;
@@ -86,6 +96,7 @@ ul#nav a#home {
 	text-decoration: none;
 }
 
+/*Events button.*/
 ul#nav a#events {
 	float: right;
 	left: 145px;
@@ -95,29 +106,33 @@ ul#nav a#events {
 	text-decoration: none;
 }
 
-p.intro{
+/*Intro text, mission statement.*/
+p.intro {
 	text-align: center;
 	font-size: 20px;
 	position: relative;
 }
 
+/*General body.*/
 body {
-    background-size: cover;
-    background-color: #050505;
+	background-size: cover;
+	background-color: #050505;
 }
 
+/*The full wrapper. Encompasses all content.*/
 #fullwrap {
 	top: 10px;
 	margin: 0 auto;
 	text-align: center;
 	width: 800px;
 	position: relative;
-	background-color: #1e1f21;	
+	background-color: #1e1f21;
 	border: 1px solid #1e1f21;
 	border-radius: 20px 20px 20px 20px;
-	box-shadow: 0px 0px 50px 20px rgba(50,50,50,0.5);
+	box-shadow: 0px 0px 50px 20px rgba(50, 50, 50, 0.5);
 }
 
+/*Title wrapper.*/
 #wrappert {
 	margin: 0 auto;
 	text-align: center;
@@ -126,6 +141,7 @@ body {
 	background-color: #1e1f21;
 }
 
+/*Nav wrapper.*/
 #wrapnav {
 	margin: 0 auto;
 	text-align: center;
@@ -136,15 +152,17 @@ body {
 	height: 20px;
 }
 
+/*Intro wrapper.*/
 #wrapintro {
 	margin: 0 auto;
 	text-align: center;
 	width: 800px;
 	position: relative;
 	background-color: #313036;
-	color: #dbdbdb;	
+	color: #dbdbdb;
 }
 
+/*These will have content.*/
 #fillerbox {
 	margin: 0 auto;
 	text-align: center;
@@ -152,47 +170,48 @@ body {
 	position: relative;
 	color: #dbdbdb;
 	overflow: hidden;
-
-	
 }
 
+/*This IS the content.*/
 #filler1 {
-    width: 32.5%;
-    float:left;
-    border-top: 1px solid rgba(30,31,33,0.2);
-    border-bottom: 1px solid rgba(30, 31, 330.2);
-    border-radius: 20px 20px 20px 0px;
- 	background-color: #313036;
- 	height: 100px;
-
+	width: 32.5%;
+	float: left;
+	border-top: 1px solid rgba(30, 31, 33, 0.2);
+	border-bottom: 1px solid rgba(30, 31, 330.2);
+	border-radius: 20px 20px 20px 0px;
+	background-color: #313036;
+	height: 100px;
 }
+
+/*Lazy way of adding some space.*/
 #spacer {
 	border: 5px solid #1e1f21;
 	float: left;
 }
 
+/*This IS the content.*/
 #filler2 {
-    float: left;
-    width: 32.5%;
-    border-top: 1px solid rgba(30,31,33,0.2);
-    border-bottom: 1px solid rgba(30,31,33,0.2);
+	float: left;
+	width: 32.5%;
+	border-top: 1px solid rgba(30, 31, 33, 0.2);
+	border-bottom: 1px solid rgba(30, 31, 33, 0.2);
 	border-radius: 20px 20px 20px 20px;
 	background-color: #313036;
 	height: 100px;
-
 }
 
+/*This IS the content.*/
 #filler3 {
 	float: left;
-    width: 32.5%;
-    border-top: 1px solid rgba(30,31,33,0.2);
-    border-bottom: 1px solid rgba(30,31,33,0.2);
+	width: 32.5%;
+	border-top: 1px solid rgba(30, 31, 33, 0.2);
+	border-bottom: 1px solid rgba(30, 31, 33, 0.2);
 	border-radius: 20px 20px 0px 20px;
 	background-color: #313036;
 	height: 100px;
-
 }
 
+/*Ygo wrapper.*/
 #ygo {
 	margin: 0 auto;
 	text-align: center;
@@ -205,34 +224,35 @@ body {
 	border-radius: 20px 20px 20px 0px;
 }
 
+/*This is the side image display.*/
 #ygobanner {
 	background: transparent url("../banner/YGOBanner2.png") 90% 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 33%;
-    height: 130px;
-    float:left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 33%;
+	height: 130px;
+	float: left;
 	color: #dbdbdb;
-
 }
 
+/*Input for YGO.*/
 #ygodesc {
-    float: left;
-    width: 66%;
-    height: 130px;
- 	color: #dbdbdb;
- 	text-align: left;
- 	font-size: 11px;
- 	padding-left: 7px;
-
-
+	float: left;
+	width: 66%;
+	height: 130px;
+	color: #dbdbdb;
+	text-align: left;
+	font-size: 11px;
+	padding-left: 7px;
 }
 
+/*Title for ygo desc*/
 div#ygodesc h2#ygot {
 	text-align: center;
 	font-size: 15px;
 }
 
+/*MTG wrapper*/
 #mtg {
 	margin: 0 auto;
 	text-align: center;
@@ -241,38 +261,37 @@ div#ygodesc h2#ygot {
 	background-color: #313036;
 	color: #dbdbdb;
 	overflow: hidden;
-	border: 1.5px solid rgba(160,39,155,0.2);
+	border: 1.5px solid rgba(160, 39, 155, 0.2);
 	border-radius: 20px 20px 20px 0px;
 }
 
+/*MTG Left side image.*/
 #mtgbanner {
 	background: transparent url("../banner/magicbanner.png") 50% 0%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 33%;
-    height: 130px;
-    float:left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 33%;
+	height: 130px;
+	float: left;
 	color: #dbdbdb;
-
 }
 
+/*MTG filler text.*/
 #mtgdesc {
-    float: left;
-    width: 66%;
-    height: 130px;
- 	color: #dbdbdb;
- 	text-align: left;
- 	font-size: 11px;
- 	padding-left: 7px;
-
-
+	float: left;
+	width: 66%;
+	height: 130px;
+	color: #dbdbdb;
+	text-align: left;
+	font-size: 11px;
+	padding-left: 7px;
 }
-
+/*MTG desc*/
 div#mtgdesc h2#mtgt {
 	text-align: center;
 	font-size: 15px;
 }
-
+/*Nintendo wrapper*/
 #nin {
 	margin: 0 auto;
 	text-align: center;
@@ -281,36 +300,36 @@ div#mtgdesc h2#mtgt {
 	background-color: #313036;
 	color: #dbdbdb;
 	overflow: hidden;
-	border: 1.5px solid rgba(221,47,47,0.2);
+	border: 1.5px solid rgba(221, 47, 47, 0.2);
 	border-radius: 20px 20px 20px 0px;
 }
-
+/*Nintendo banner*/
 #ninbanner {
 	background: transparent url("../banner/switchbanner.png") 40% 0%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 33%;
-    height: 130px;
-    float:left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 33%;
+	height: 130px;
+	float: left;
 	color: #dbdbdb;
 }
-
+/*Nintendo Description*/
 #nindesc {
-    float: left;
-    width: 66%;
-    height: 130px;
- 	color: #dbdbdb;
- 	text-align: left;
- 	font-size: 11px;
- 	padding-left: 7px;
+	float: left;
+	width: 66%;
+	height: 130px;
+	color: #dbdbdb;
+	text-align: left;
+	font-size: 11px;
+	padding-left: 7px;
 }
-
+/*Nintendo title*/
 div#nindesc h2#nint {
 	text-align: center;
 	font-size: 15px;
 }
 
-footer{
+footer {
 	top: 15px;
 	margin: 0 auto;
 	text-align: center;
@@ -318,4 +337,45 @@ footer{
 	position: relative;
 	color: #dbdbdb;
 	overflow: hidden;
+}
+
+div#login {
+	margin: 0 auto;
+	text-align: center;
+	width: 400px;
+	position: absolute;
+	float: right;
+	z-index: 1;
+	color: #dbdbdb;
+	overflow: hidden;
+	left: 390px;
+	font-size: 14px;
+	color: #2ac4c7;
+	top: 144px;
+	text-color: #2ac4c7;
+}
+
+button[type=submit] {
+	background-color: #35373c;
+	font-size: 10px;
+	height: 18px;
+	border: 1px outset #2ac4c7;
+	color: #2ac4c7;
+	padding-top: 3px;
+}
+
+label {
+	font-size: 16px;
+}
+
+input {
+	
+}
+
+input[type=text], input[type=password] {
+	font-size: 12px;
+	width: 80px;
+	background-color: #35373c;
+	color: #2ac4c7;
+	border: 1px outset #2ac4c7;
 }

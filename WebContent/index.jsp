@@ -12,6 +12,20 @@ pageEncoding="ISO-8859-1"%>
       <div id="wrappert">
         <h1 class="title"><a id="css"><img src="assets/banner/ccs.png" style="width: 280px;height: 100px;"></a></h1>
       </div>
+      
+  <form action="action_page.php" method="post">
+
+  <div id="login">
+    <label for="uname">Username</label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw">Password</label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+  </div>
+
+</form>
       <div id="wrapnav">
         <ul id="nav">
           <li><a id="home" href="">Home</a></li>
@@ -20,7 +34,6 @@ pageEncoding="ISO-8859-1"%>
           <li><a id="twitch" href="twitch"><img src="assets/buttons/twitch.png"></a></li>
           <li><a id="help" href="help"><img src="assets/buttons/help.png"></a></li>
           <li><a id="signup" href="signup">Sign up</a></li>
-          <li><a id="login" href="login">Login</a></li>
           <li><a id="events" href="calendar">Events Calendar</a></li>
         </ul>
         <br>
@@ -75,5 +88,7 @@ pageEncoding="ISO-8859-1"%>
     For more information, help, or any of the above, contact:<br>
     (1)555-555-5555 OR email dummy@gmail.com
   </footer>
+
+
 
 
