@@ -9,12 +9,12 @@ public class DB {
 	
 	private Connection connection = null;
 	
+	
 	private DB() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.connection = DriverManager.getConnection(
-					 "jdbc:mysql://localhost/agilitree?user=root" +
-					 "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
+					 "jdbc:mysql://localhost:3306/agilitree?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -29,7 +29,8 @@ public class DB {
 	
 	public ResultSet query(String queryText) {
 		try {
-			Statement statement = connection.createStatement();
+			Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_UPDATABLE);
 			ResultSet results = statement.executeQuery(queryText);
 			return results;
 		} catch (SQLException e) {
@@ -37,6 +38,10 @@ public class DB {
 			return null;
 		}
 		
-	}
+	
+		}
+	
+
+	
 	
 }

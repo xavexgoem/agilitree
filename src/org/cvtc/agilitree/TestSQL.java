@@ -22,10 +22,10 @@ public class TestSQL extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ResultSet results = database.query("SELECT * FROM categories");
+		ResultSet results = database.query("SELECT * FROM users");
 		try {
 			while(results.next()) {
-				String email = results.getString("title");
+				String email = results.getString("password");
 				System.out.println(email);
 			}
 		} catch (SQLException e) {

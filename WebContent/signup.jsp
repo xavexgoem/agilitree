@@ -12,7 +12,7 @@
 		<ul id="nav">
 			<li><a id="home" href="">-Go Home?</a></li>
 		</ul>
-		<form action="action_page.php">
+		<form action="SignUp" method="post">
 			<div id="signup">
 				<h1>Sign Up</h1>
 				<p>Want to create an account? Fill out the forms below.</p>

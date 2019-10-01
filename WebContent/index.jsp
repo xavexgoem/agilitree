@@ -33,8 +33,8 @@ pageEncoding="ISO-8859-1"%>
           <li><a id="twitter" href="twitter"><img src="assets/buttons/twitter.png"></a></li>
           <li><a id="twitch" href="twitch"><img src="assets/buttons/twitch.png"></a></li>
           <li><a id="help" href="help"><img src="assets/buttons/help.png"></a></li>
-          <li><a id="signup" href="signup">Sign up</a></li>
-          <li><a id="events" href="calendar">Events Calendar</a></li>
+          <li><a id="signup" href="signup.jsp">Sign up</a></li>
+          <li><a id="events" href="calendar.jsp">Events Calendar</a></li>
         </ul>
         <br>
       </div>
