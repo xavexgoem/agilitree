@@ -5,7 +5,6 @@ var Calendar = function(model, options, date){
     Color: '',
     LinkColor: '',
     NavShow: true,
-    NavVertical: false,
     NavLocation: '',
     DateTimeShow: true,
     DateTimeFormat: 'mmm, yyyy',
@@ -50,72 +49,6 @@ function createCalendar(calendar, element, adjuster){
     }
   }
   var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-  function AddSidebar(){
-    var sidebar = document.createElement('div');
-    sidebar.className += 'cld-sidebar';
-
-    var monthList = document.createElement('ul');
-    monthList.className += 'cld-monthList';
-
-    for(var i = 0; i < months.length - 3; i++){
-      var x = document.createElement('li');
-      x.className += 'cld-month';
-      var n = i - (4 - calendar.Selected.Month);
-      // Account for overflowing month values
-      if(n<0){n+=12;}
-      else if(n>11){n-=12;}
-      // Add Appropriate Class
-      if(i==0){
-        x.className += ' cld-rwd cld-nav';
-        x.addEventListener('click', function(){
-          typeof calendar.Options.ModelChange == 'function'?calendar.Model = calendar.Options.ModelChange():calendar.Model = calendar.Options.ModelChange;
-          createCalendar(calendar, element, -1);});
-        x.innerHTML += '<svg height="15" width="15" viewBox="0 0 100 75" fill="rgba(255,255,255,0.5)"><polyline points="0,75 100,75 50,0"></polyline></svg>';
-      }
-      else if(i==months.length - 4){
-        x.className += ' cld-fwd cld-nav';
-        x.addEventListener('click', function(){
-          typeof calendar.Options.ModelChange == 'function'?calendar.Model = calendar.Options.ModelChange():calendar.Model = calendar.Options.ModelChange;
-          createCalendar(calendar, element, 1);} );
-        x.innerHTML += '<svg height="15" width="15" viewBox="0 0 100 75" fill="rgba(255,255,255,0.5)"><polyline points="0,0 100,0 50,75"></polyline></svg>';
-      }
-      else{
-        if(i < 4){x.className += ' cld-pre';}
-        else if(i > 4){x.className += ' cld-post';}
-        else{x.className += ' cld-curr';}
-
-        //prevent losing var adj value (for whatever reason that is happening)
-        (function () {
-          var adj = (i-4);
-          //x.addEventListener('click', function(){createCalendar(calendar, element, adj);console.log('kk', adj);} );
-          x.addEventListener('click', function(){
-            typeof calendar.Options.ModelChange == 'function'?calendar.Model = calendar.Options.ModelChange():calendar.Model = calendar.Options.ModelChange;
-            createCalendar(calendar, element, adj);} );
-          x.setAttribute('style', 'opacity:' + (1 - Math.abs(adj)/4));
-          x.innerHTML += months[n].substr(0,3);
-        }()); // immediate invocation
-
-        if(n==0){
-          var y = document.createElement('li');
-          y.className += 'cld-year';
-          if(i<5){
-            y.innerHTML += calendar.Selected.Year;
-          }else{
-            y.innerHTML += calendar.Selected.Year + 1;
-          }
-          monthList.appendChild(y);
-        }
-      }
-      monthList.appendChild(x);
-    }
-    sidebar.appendChild(monthList);
-    if(calendar.Options.NavLocation){
-      document.getElementById(calendar.Options.NavLocation).innerHTML = "";
-      document.getElementById(calendar.Options.NavLocation).appendChild(sidebar);
-    }
-    else{element.appendChild(sidebar);}
-  }
 
   var mainSection = document.createElement('div');
   mainSection.className += "cld-main";
@@ -201,45 +134,45 @@ function createCalendar(calendar, element, adjuster){
       var number = DayNumber(i+1);
       // Check Date against Event Dates
       for(var n = 0; n < calendar.Model.length; n++){
-        var evDate = calendar.Model[n].Date;
-        var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month + 1, (i+1));
-        if(evDate.getTime() == toDate.getTime()){
-          number.className += " eventday";
-          var title = document.createElement('span');
-          title.className += "cld-title";
-          if(typeof calendar.Model[n].Link == 'function' || calendar.Options.EventClick){
-            var a = document.createElement('a');
-            a.setAttribute('href', '#');
-            a.innerHTML += calendar.Model[n].Title;
-            if(calendar.Options.EventClick){
-              var z = calendar.Model[n].Link;
-              if(typeof calendar.Model[n].Link != 'string'){
-                  a.addEventListener('click', calendar.Options.EventClick.bind.apply(calendar.Options.EventClick, [null].concat(z)) );
+          var evDate = calendar.Model[n].Date;
+          var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month + 1, (i+1));
+          if(evDate.getTime() == toDate.getTime()){
+            number.className += " eventday";
+            var title = document.createElement('span');
+            title.className += "cld-title";
+            if(typeof calendar.Model[n].Link == 'function' || calendar.Options.EventClick){
+              var a = document.createElement('a');
+              a.setAttribute('href', '#');
+              a.innerHTML += calendar.Model[n].Title;
+              if(calendar.Options.EventClick){
+                var z = calendar.Model[n].Link;
+                if(typeof calendar.Model[n].Link != 'string'){
+                    a.addEventListener('click', calendar.Options.EventClick.bind.apply(calendar.Options.EventClick, [null].concat(z)) );
+                    if(calendar.Options.EventTargetWholeDay){
+                      day.className += " clickable";
+                      day.addEventListener('click', calendar.Options.EventClick.bind.apply(calendar.Options.EventClick, [null].concat(z)) );
+                    }
+                }else{
+                  a.addEventListener('click', calendar.Options.EventClick.bind(null, z) );
                   if(calendar.Options.EventTargetWholeDay){
                     day.className += " clickable";
-                    day.addEventListener('click', calendar.Options.EventClick.bind.apply(calendar.Options.EventClick, [null].concat(z)) );
+                    day.addEventListener('click', calendar.Options.EventClick.bind(null, z) );
                   }
+                }
               }else{
-                a.addEventListener('click', calendar.Options.EventClick.bind(null, z) );
+                a.addEventListener('click', calendar.Model[n].Link);
                 if(calendar.Options.EventTargetWholeDay){
                   day.className += " clickable";
-                  day.addEventListener('click', calendar.Options.EventClick.bind(null, z) );
+                  day.addEventListener('click', calendar.Model[n].Link);
                 }
               }
+              title.appendChild(a);
             }else{
-              a.addEventListener('click', calendar.Model[n].Link);
-              if(calendar.Options.EventTargetWholeDay){
-                day.className += " clickable";
-                day.addEventListener('click', calendar.Model[n].Link);
-              }
+              title.innerHTML += '<a href="' + calendar.Model[n].Link + '">' + calendar.Model[n].Title + '</a>';
             }
-            title.appendChild(a);
-          }else{
-            title.innerHTML += '<a href="' + calendar.Model[n].Link + '">' + calendar.Model[n].Title + '</a>';
+            number.appendChild(title);
           }
-          number.appendChild(title);
         }
-      }
       day.appendChild(number);
       // If Today..
       if((i+1) == calendar.Today.getDate() && calendar.Selected.Month == calendar.Today.Month && calendar.Selected.Year == calendar.Today.Year){
@@ -279,9 +212,6 @@ function createCalendar(calendar, element, adjuster){
   }
   element.appendChild(mainSection);
 
-  if(calendar.Options.NavShow && calendar.Options.NavVertical){
-    AddSidebar();
-  }
   if(calendar.Options.DateTimeShow){
     AddDateTime();
   }

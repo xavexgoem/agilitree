@@ -10,7 +10,11 @@
     <div id="calendar">
 
     </div>
-    <script type="text/javascript" src="assets/js/calendar.js"></script>
-    <script type="text/javascript" src="assets/js/events.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="assets/js/calendar.js"></script>  
+	<script type="text/javascript" src="assets/js/events.js"></script>
+	
+
   </body>
 </html>
