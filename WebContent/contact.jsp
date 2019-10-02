@@ -13,7 +13,7 @@
 			<ul id="nav">
 				<li><a id="home" href="">-Go Home?</a></li>
 			</ul>
-			<form>
+			<form action="Contact" method="post">
 				<h1>Contact Us</h1>
 				First Name:<br> <input type="text" name="firstName"
 					id="contactFirstName" value="Ron"><br> Last Name:<br>
@@ -26,8 +26,10 @@
 		Please let us know why you are contacting us today? Might need a new option not sure how 
 		textarea will work feel free to change!
 		</textarea>
+		<div>
 				<br>
 				<button type="submit" value="Submit">Submit</button>
+		</div>
 			</form>
 		</div>
 	</div>
