@@ -1,6 +1,4 @@
 
-
-
 $.ajax({
     type: 'get', 
     url: 'GetEvents',
@@ -14,14 +12,13 @@ $.ajax({
     	var events = [];
     	
     	for (i = 0; i < data.length; i++) {
-   		var dates = data[i].startDateTime;
+   		var dates = data[i].startDate;
    		
    		var year = dates.substring(0, 4);
    		var month = dates.substring(5, 7);
    		var day = dates.substring(8, 10);
    		
-   		var time = dates.substring(11, 16);
-   		
+   		var time = "5:30";
    		
    		
    		var titles = data[i].title;
