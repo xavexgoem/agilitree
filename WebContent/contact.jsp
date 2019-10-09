@@ -16,13 +16,13 @@
 			<form action="Contact" method="post">
 				<h1>Contact Us</h1>
 				First Name:<br> <input type="text" name="firstName"
-					id="contactFirstName" value="Ron"><br> Last Name:<br>
+					id="contactFirstName" value="Ron"required><br> Last Name:<br>
 				<input type="text" name="lastName" id="contactLastName"
-					value="Burgandy"><br> Email:<br> <input
+					value="Burgandy"required><br> Email:<br> <input
 					type="text" name="contactEmail" id="contactEmail"
-					value="afternoondelight69@gmail.com"><br>
+					value="afternoondelight69@gmail.com"required><br>
 				<br> Contact Us:<br>
-				<textarea name="commentsBox" id="contactCommentsBox">
+				<textarea name="commentsBox" id="contactCommentsBox"required>
 		Please let us know why you are contacting us today? Might need a new option not sure how 
 		textarea will work feel free to change!
 		</textarea>
