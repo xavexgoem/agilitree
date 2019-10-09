@@ -6,10 +6,12 @@ import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet("/CreateEvent")
 public class CreateEvent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -29,7 +31,11 @@ public class CreateEvent extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		String eventTitle = request.getParameter("eventTitle");
-		String dateOfEvent = request.getParameter("dateOfEvent");
+		String categoryNumber = request.getParameter("catNumber");
+		String startDate = request.getParameter("startDate");
+		String endDate = request.getParameter("endDate");
+		String startTime = request.getParameter("startTime");
+		String endTime = request.getParameter("endTime");
 		String eventDescription = request.getParameter("eventDescription");
 		
 		String target = null;
@@ -43,7 +49,7 @@ public class CreateEvent extends HttpServlet {
 		}
 		
 		// Validate given input
-		if (eventTitle.isEmpty() || dateOfEvent.isEmpty() || eventDescription.isEmpty())  {
+		if (eventTitle.isEmpty() || startDate.isEmpty() || eventDescription.isEmpty())  {
 			RequestDispatcher rd = request.getRequestDispatcher("createEvent.jsp");
 			out.println("<font color=red>Please fill all the fields</font>");
 			rd.include(request,  response);
@@ -52,18 +58,22 @@ public class CreateEvent extends HttpServlet {
 			
 			
 			try { 
-				 System.out.println("Event Title" + eventTitle);
-				//String query = "select * from events";
+				 System.out.println("Event Title: " + eventTitle);
+				String query = "select * from events";
 				
-				//ResultSet results = database.query(query);
+				ResultSet results = database.query(query);
 				
-				//results.moveToInsertRow();
-				//results.updateString(1, email);
-				//results.updateString(2, "Not on page");
-			//	results.updateInt(3, 0);
-				//results.updateInt(4, 0);
-			//	results.updateString(5, password);
-				//results.insertRow();
+				results.moveToInsertRow();
+				
+				results.updateString(2, categoryNumber);
+				results.updateString(3, startDate);
+				results.updateString(4, endDate);
+				results.updateString(5, eventTitle);
+				results.updateString(6, eventDescription);
+				results.updateString(7, startTime);
+				results.updateString(8, endTime);
+				
+				results.insertRow();
 				
 			} 
 			
