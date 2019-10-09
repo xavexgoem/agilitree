@@ -1,8 +1,8 @@
 CREATE DATABASE  IF NOT EXISTS `agilitree` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `agilitree`;
--- MySQL dump 10.13  Distrib 8.0.17, for macos10.14 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: agilitree
+-- Host: localhost    Database: agilitree
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -43,13 +43,13 @@ INSERT INTO `categories` VALUES (1,'Magic',1),(2,'YGO',2),(3,'DnD',3);
 UNLOCK TABLES;
 
 --
--- Table structure for table `eventInterest`
+-- Table structure for table `eventinterest`
 --
 
-DROP TABLE IF EXISTS `eventInterest`;
+DROP TABLE IF EXISTS `eventinterest`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `eventInterest` (
+CREATE TABLE `eventinterest` (
   `eventID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   PRIMARY KEY (`eventID`,`userID`)
@@ -57,12 +57,12 @@ CREATE TABLE `eventInterest` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `eventInterest`
+-- Dumping data for table `eventinterest`
 --
 
-LOCK TABLES `eventInterest` WRITE;
-/*!40000 ALTER TABLE `eventInterest` DISABLE KEYS */;
-/*!40000 ALTER TABLE `eventInterest` ENABLE KEYS */;
+LOCK TABLES `eventinterest` WRITE;
+/*!40000 ALTER TABLE `eventinterest` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eventinterest` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -73,14 +73,16 @@ DROP TABLE IF EXISTS `events`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `events` (
-  `eventID` int(11) NOT NULL,
+  `eventID` int(11) NOT NULL AUTO_INCREMENT,
   `categoryID` int(11) NOT NULL,
-  `startDateTime` datetime NOT NULL,
-  `endDateTime` datetime NOT NULL,
+  `startDate` date NOT NULL,
+  `endDate` date NOT NULL,
   `title` varchar(45) NOT NULL,
   `description` mediumtext,
+  `startTime` varchar(10) DEFAULT NULL,
+  `endTime` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`eventID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +91,7 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,1,'2019-09-30 10:00:00','0019-09-30 12:00:00','A thing happens','So many things happen, it\'s incredible'),(2,2,'2019-10-01 16:00:00','2019-10-01 18:00:00','October things',NULL);
+INSERT INTO `events` VALUES (1,1,'2019-09-30','0019-09-30','A thing happens','So many things happen, it\'s incredible','5:30 pm','8:30pm'),(2,2,'2019-10-01','2019-10-01','October things','better then sept things','4:00 pm','8:00 pm'),(3,3,'2019-10-31','2019-10-31','Halloween','Trick or treating','6:00 pm','9:00 pm'),(4,2,'2019-10-25','2019-10-25','Magic Tournament','Using current legal cards on a random brackets tournament','7:00 pm','12:00 am'),(9,2,'2019-10-20','2019-10-20','test','I will party my ass off\r\n','5:30pm','9:30pm'),(13,3,'2019-10-28','2019-10-28','Pokemon Tournament','Bring your pikachu\'s to dominate','17:30','22:30');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,8 +105,8 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `emailAddress` varchar(50) NOT NULL,
   `name` varchar(45) NOT NULL,
-  `wantsPushEvents` tinyint(4),
-  `isAdministrator` tinyint(4),
+  `wantsPushEvents` tinyint(4) DEFAULT NULL,
+  `isAdministrator` tinyint(4) DEFAULT NULL,
   `password` varchar(45) NOT NULL,
   PRIMARY KEY (`emailAddress`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -121,13 +123,13 @@ INSERT INTO `users` VALUES ('skolendo@student.cvtc.edu','Sebastian Kolendo',1,1,
 UNLOCK TABLES;
 
 --
--- Table structure for table `userSubscriptions`
+-- Table structure for table `usersubscriptions`
 --
 
-DROP TABLE IF EXISTS `userSubscriptions`;
+DROP TABLE IF EXISTS `usersubscriptions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `userSubscriptions` (
+CREATE TABLE `usersubscriptions` (
   `UserID` int(11) NOT NULL,
   `CategoryID` int(11) NOT NULL,
   PRIMARY KEY (`UserID`,`CategoryID`)
@@ -135,12 +137,12 @@ CREATE TABLE `userSubscriptions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `userSubscriptions`
+-- Dumping data for table `usersubscriptions`
 --
 
-LOCK TABLES `userSubscriptions` WRITE;
-/*!40000 ALTER TABLE `userSubscriptions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `userSubscriptions` ENABLE KEYS */;
+LOCK TABLES `usersubscriptions` WRITE;
+/*!40000 ALTER TABLE `usersubscriptions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `usersubscriptions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -152,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-25 17:59:32
+-- Dump completed on 2019-10-09 15:35:41
