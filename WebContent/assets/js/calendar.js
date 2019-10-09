@@ -1,18 +1,6 @@
-
 var Calendar = function(model, options, date){
   // Default Values
   this.Options = {
-    Color: '',
-    LinkColor: '',
-    NavShow: true,
-    NavLocation: '',
-    DateTimeShow: true,
-    DateTimeFormat: 'mmm, yyyy',
-    DatetimeLocation: '',
-    EventClick: '',
-    EventTargetWholeDay: false,
-    DisabledDays: [],
-    ModelChange: model
   };
   // Overwriting default values
   for(var key in options){
@@ -37,8 +25,9 @@ var Calendar = function(model, options, date){
   if(this.Selected.Month==0){this.Prev = new Date(this.Selected.Year-1, 11, 1);}
   this.Prev.Days = new Date(this.Prev.getFullYear(), (this.Prev.getMonth() + 1), 0).getDate();
 };
-
+'// '
 function createCalendar(calendar, element, adjuster){
+    
   if(typeof adjuster !== 'undefined'){
     var newDate = new Date(calendar.Selected.Year, calendar.Selected.Month + adjuster, 1);
     calendar = new Calendar(calendar.Model, calendar.Options, newDate);
@@ -56,29 +45,25 @@ function createCalendar(calendar, element, adjuster){
   function AddDateTime(){
       var datetime = document.createElement('div');
       datetime.className += "cld-datetime";
-      if(calendar.Options.NavShow && !calendar.Options.NavVertical){
+
         var rwd = document.createElement('div');
         rwd.className += " cld-rwd cld-nav";
         rwd.addEventListener('click', function(){createCalendar(calendar, element, -1);} );
         rwd.innerHTML = '<svg height="15" width="15" viewBox="0 0 75 100" fill="rgba(0,0,0,0.5)"><polyline points="0,50 75,0 75,100"></polyline></svg>';
         datetime.appendChild(rwd);
-      }
+
       var today = document.createElement('div');
       today.className += ' today';
       today.innerHTML = months[calendar.Selected.Month] + ", " + calendar.Selected.Year;
       datetime.appendChild(today);
-      if(calendar.Options.NavShow && !calendar.Options.NavVertical){
+
         var fwd = document.createElement('div');
         fwd.className += " cld-fwd cld-nav";
         fwd.addEventListener('click', function(){createCalendar(calendar, element, 1);} );
         fwd.innerHTML = '<svg height="15" width="15" viewBox="0 0 75 100" fill="rgba(0,0,0,0.5)"><polyline points="0,0 75,50 0,100"></polyline></svg>';
         datetime.appendChild(fwd);
-      }
-      if(calendar.Options.DatetimeLocation){
-        document.getElementById(calendar.Options.DatetimeLocation).innerHTML = "";
-        document.getElementById(calendar.Options.DatetimeLocation).appendChild(datetime);
-      }
-      else{mainSection.appendChild(datetime);}
+
+      mainSection.appendChild(datetime);
   }
 
   function AddLabels(){
@@ -93,6 +78,8 @@ function createCalendar(calendar, element, adjuster){
     }
     mainSection.appendChild(labels);
   }
+    
+    
   function AddDays(){
     // Create Number Element
     function DayNumber(n){
@@ -109,11 +96,6 @@ function createCalendar(calendar, element, adjuster){
       day.className += "cld-day prevMonth";
       //Disabled Days
       var d = i%7;
-      for(var q = 0; q < calendar.Options.DisabledDays.length; q++){
-        if(d==calendar.Options.DisabledDays[q]){
-          day.className += " disableDay";
-        }
-      }
 
       var number = DayNumber((calendar.Prev.Days - calendar.Selected.FirstDay) + (i+1));
       day.appendChild(number);
@@ -126,62 +108,44 @@ function createCalendar(calendar, element, adjuster){
       day.className += "cld-day currMonth";
       //Disabled Days
       var d = (i + calendar.Selected.FirstDay)%7;
-      for(var q = 0; q < calendar.Options.DisabledDays.length; q++){
-        if(d==calendar.Options.DisabledDays[q]){
-          day.className += " disableDay";
-        }
-      }
       var number = DayNumber(i+1);
       // Check Date against Event Dates
+        
       for(var n = 0; n < calendar.Model.length; n++){
-          var evDate = calendar.Model[n].Date;
-          var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month + 1, (i+1));
-          if(evDate.getTime() == toDate.getTime()){
-            number.className += " eventday";
-            var title = document.createElement('span');
-            title.className += "cld-title";
-            if(typeof calendar.Model[n].Link == 'function' || calendar.Options.EventClick){
-              var a = document.createElement('a');
-              a.setAttribute('href', '#');
-              a.innerHTML += calendar.Model[n].Title;
-              if(calendar.Options.EventClick){
-                var z = calendar.Model[n].Link;
-                if(typeof calendar.Model[n].Link != 'string'){
-                    a.addEventListener('click', calendar.Options.EventClick.bind.apply(calendar.Options.EventClick, [null].concat(z)) );
-                    if(calendar.Options.EventTargetWholeDay){
-                      day.className += " clickable";
-                      day.addEventListener('click', calendar.Options.EventClick.bind.apply(calendar.Options.EventClick, [null].concat(z)) );
-                    }
-                }else{
-                  a.addEventListener('click', calendar.Options.EventClick.bind(null, z) );
-                  if(calendar.Options.EventTargetWholeDay){
-                    day.className += " clickable";
-                    day.addEventListener('click', calendar.Options.EventClick.bind(null, z) );
-                  }
-                }
-              }else{
-                a.addEventListener('click', calendar.Model[n].Link);
-                if(calendar.Options.EventTargetWholeDay){
-                  day.className += " clickable";
-                  day.addEventListener('click', calendar.Model[n].Link);
-                }
-              }
-              title.appendChild(a);
-            }else{
-              title.innerHTML += '<a href="' + calendar.Model[n].Link + '">' + calendar.Model[n].Title + '</a>';
-            }
-            number.appendChild(title);
-          }
-        }
+        var evDate = calendar.Model[n].Date;
+        var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month + 1, (i+1));
+        if(evDate.getTime() == toDate.getTime()){
+          number.className += " eventday";
+          var title = document.createElement('span');
+          title.className += "cld-title" + calendar.Model[n].Clr;
+            
+        var descDiv = document.createElement('div');
+        descDiv.innerHTML += '<p>' + "Start Time: " + calendar.Model[n].Time + "<br />" + calendar.Model[n].Desc + '</p>';
+        descDiv.className += 'descDiv';
+        descDiv.id += 'desc' + calendar.Model[n].DId;
+        descDiv.style.display = "none";
+        
+        title.innerHTML += '<p onclick=cycle(this.parentNode)>' + calendar.Model[n].Title + '</p>';
+        mainSection.appendChild(descDiv);   
+        title.id += calendar.Model[n].DId;
+        number.appendChild(title);
+        
+      }
+        
       day.appendChild(number);
       // If Today..
       if((i+1) == calendar.Today.getDate() && calendar.Selected.Month == calendar.Today.Month && calendar.Selected.Year == calendar.Today.Year){
         day.className += " today";
       }
       days.appendChild(day);
+        
+          
+    };
+
     }
+      
     // Next Month's Days
-    // Always same amount of days in calendar
+    // Always same amount of days in calander
     var extraDays = 13;
     if(days.children.length>35){extraDays = 6;}
     else if(days.children.length<29){extraDays = 20;}
@@ -191,11 +155,7 @@ function createCalendar(calendar, element, adjuster){
       day.className += "cld-day nextMonth";
       //Disabled Days
       var d = (i + calendar.Selected.LastDay + 1)%7;
-      for(var q = 0; q < calendar.Options.DisabledDays.length; q++){
-        if(d==calendar.Options.DisabledDays[q]){
-          day.className += " disableDay";
-        }
-      }
+
 
       var number = DayNumber(i+1);
       day.appendChild(number);
@@ -204,20 +164,30 @@ function createCalendar(calendar, element, adjuster){
     }
     mainSection.appendChild(days);
   }
-  if(calendar.Options.Color){
-    mainSection.innerHTML += '<style>.cld-main{color:' + calendar.Options.Color + ';}</style>';
-  }
-  if(calendar.Options.LinkColor){
-    mainSection.innerHTML += '<style>.cld-title a{color:' + calendar.Options.LinkColor + ';}</style>';
-  }
-  element.appendChild(mainSection);
 
-  if(calendar.Options.DateTimeShow){
+    
+  element.appendChild(mainSection);
     AddDateTime();
-  }
+
   AddLabels();
   AddDays();
+    
+    
 }
+
+    function cycle(r) {
+        var y = r.id;
+        var w = document.getElementById("desc" + y);
+        
+        if (w.style.display == "none") {
+            w.style.display = "block";
+        } else {
+            w.style.display = "none";
+        }  
+
+    }
+    
+    
 
 function calendar(el, data, settings){
   var obj = new Calendar(data, settings);
