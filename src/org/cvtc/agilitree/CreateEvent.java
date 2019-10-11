@@ -26,10 +26,10 @@ public class CreateEvent extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		PrintWriter out = response.getWriter();
-		String username = request.getParameter("emailAddress");
-		String password = request.getParameter("password");
 		String eventTitle = request.getParameter("eventTitle");
 		String categoryNumber = request.getParameter("catNumber");
 		String startDate = request.getParameter("startDate");
@@ -58,29 +58,22 @@ public class CreateEvent extends HttpServlet {
 			
 			
 			try { 
-				ResultSet userResults = database.query("select userName as name, password from users");
-				while(userResults.next()) {
-					if(userResults.getObject("userName").equals(username) &&
-							userResults.getObject("password").equals(password)) {
-						String query = "select * from events";
-						
-						ResultSet results = database.query(query);
-						
-						results.moveToInsertRow();
-						
-						results.updateString(2, categoryNumber);
-						results.updateString(3, startDate);
-						results.updateString(4, endDate);
-						results.updateString(5, eventTitle);
-						results.updateString(6, eventDescription);
-						results.updateString(7, startTime);
-						results.updateString(8, endTime);
-						
-						results.insertRow();
-						break;
-					}
-				}
+				 System.out.println("Event Title: " + eventTitle);
+				String query = "select * from events";
 				
+				ResultSet results = database.query(query);
+				
+				results.moveToInsertRow();
+				
+				results.updateString(2, categoryNumber);
+				results.updateString(3, startDate);
+				results.updateString(4, endDate);
+				results.updateString(5, eventTitle);
+				results.updateString(6, eventDescription);
+				results.updateString(7, startTime);
+				results.updateString(8, endTime);
+				
+				results.insertRow();
 				
 			} 
 			
@@ -96,8 +89,8 @@ public class CreateEvent extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
 }
-
