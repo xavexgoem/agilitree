@@ -7,7 +7,7 @@
 <meta charset="ISO-8859-1">
 <link href="assets/css/signIn.css" rel="stylesheet" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<title>Contact Us!</title>
+<title>Create Event!</title>
 </head>
 <body>
 	<div id="fullwrap">
@@ -26,12 +26,7 @@
 				</select>
 				<script>
 				
-				json = 
-				<%= 
-				
-				ServletHelper.ResultSetToJSON(DB.getInstance().query("SELECT * FROM categories"))
-				
-				%>;
+				json = <%= ServletHelper.ResultSetToJSON(DB.getInstance().query("SELECT * FROM categories")) %>;
 				
 				json.forEach(function(category) {
 					$("#category_select").append("<option value=" + category.categoryID + ">" + category.title + "</option>");
