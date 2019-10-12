@@ -22,6 +22,7 @@ public class DB {
 	
 	public static DB getInstance() {
 		if (instance == null) {
+			System.out.println("new DB");
 			instance = new DB();
 		}
 		return instance;
