@@ -1,3 +1,7 @@
+#calendar {
+	font-family: "Helvetica", "Arial", sans-serif;
+}
+
 .cld-main{
     position: relative;
     width: 60%;
@@ -110,6 +114,7 @@
 .cld-number.eventday:hover{
     background: #eee;
 }
+
 .today .cld-number.eventday:hover{
     cursor: pointer;
 }

@@ -1,10 +1,14 @@
 a {
   text-decoration: none;
-  color: blue;
+  color: teal;
 }
 
 a:visited {
-  color: blue;
+  color: teal;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 h1.title {
@@ -107,7 +111,7 @@ body {
 	text-align: center;
 	width: 100%;
 	background-color: #4C5270;
-  box-shadow: 0 5px 5px -4px #666;
+  box-shadow: 0 5px 5px -3px #666;
   z-index: 10;
   position: relative;
 }
@@ -121,22 +125,18 @@ body {
   position: relative;
 }
 
-#calendarwrapper {
-  float:left;
-}
-
 #contentmain {
   width: 100%;
-  background-color: #eee;
+  background-color: white;
   padding-top:7px;
   padding-bottom: 7px;
 }
 
 /*Intro wrapper.*/
-#wrapintro {
+.wrapbigtext {
   margin: 0 auto;
   padding: 10px;
-	text-align: justify;
+	text-align: center;
 	width: 90%;
 	position: relative;
   font-family: 'Crimson Text', serif;
@@ -145,53 +145,8 @@ body {
   line-height: 1.4;
 }
 
-/*These will have content.*/
-#fillerbox {
-	margin: 0 auto;
-	text-align: center;
-	width: 800px;
-	position: relative;
-	color: #dbdbdb;
-	overflow: hidden;
-}
-
-/*This IS the content.*/
-#filler1 {
-	width: 32.5%;
-	float: left;
-	border-top: 1px solid rgba(30, 31, 33, 0.2);
-	border-bottom: 1px solid rgba(30, 31, 330.2);
-	border-radius: 20px 20px 20px 0px;
-	background-color: #313036;
-	height: 100px;
-}
-
-/*Lazy way of adding some space.*/
-#spacer {
-	border: 5px solid #1e1f21;
-	float: left;
-}
-
-/*This IS the content.*/
-#filler2 {
-	float: left;
-	width: 32.5%;
-	border-top: 1px solid rgba(30, 31, 33, 0.2);
-	border-bottom: 1px solid rgba(30, 31, 33, 0.2);
-	border-radius: 20px 20px 20px 20px;
-	background-color: #313036;
-	height: 100px;
-}
-
-/*This IS the content.*/
-#filler3 {
-	float: left;
-	width: 32.5%;
-	border-top: 1px solid rgba(30, 31, 33, 0.2);
-	border-bottom: 1px solid rgba(30, 31, 33, 0.2);
-	border-radius: 20px 20px 0px 20px;
-	background-color: #313036;
-	height: 100px;
+#calendarwrapper {
+	margin: 20px 0;
 }
 
 .banner {
@@ -201,14 +156,16 @@ body {
 
 /*Ygo wrapper.*/
 #ygo {
+	margin: 20px 40px;
 	text-align: center;
-	width: 40%;
+	width: 800px;
 	position: relative;
 	background-color: #313036;
 	color: #dbdbdb;
 	overflow: hidden;
-	border: 1.5px solid rgba(239, 234, 77, 0.2);
+	border: 1.5px solid rgba(160, 39, 155, 0.2);
 	border-radius: 20px 20px 20px 0px;
+	box-shadow: 5px 5px 5px gray;
 }
 
 /*This is the side image display.*/
@@ -227,10 +184,10 @@ body {
 	float: left;
 	width: 65%;
 	height: 130px;
-	color: #dbdbdb;
+	color: white;
 	text-align: left;
-	font-size: 11px;
-	padding-left: 7px;
+	font-size: 110%;
+	padding: 5px;
 }
 
 /*Title for ygo desc*/
@@ -250,6 +207,7 @@ div#ygodesc h2#ygot {
 	overflow: hidden;
 	border: 1.5px solid rgba(160, 39, 155, 0.2);
 	border-radius: 20px 20px 20px 0px;
+	box-shadow: 5px 5px 5px gray;
 }
 
 /*MTG Left side image.*/
@@ -270,7 +228,7 @@ div#ygodesc h2#ygot {
 	height: 130px;
 	color: #dbdbdb;
 	text-align: left;
-	font-size: 11px;
+	font-size: 110%;
 	padding-left: 7px;
 }
 /*MTG desc*/
@@ -280,7 +238,9 @@ div#mtgdesc h2#mtgt {
 }
 /*Nintendo wrapper*/
 #nin {
-	margin: 0 auto;
+	float: right;
+	margin-right: 40px;
+	margin-bottom: 20px;
 	text-align: center;
 	width: 800px;
 	position: relative;
@@ -289,6 +249,7 @@ div#mtgdesc h2#mtgt {
 	overflow: hidden;
 	border: 1.5px solid rgba(221, 47, 47, 0.2);
 	border-radius: 20px 20px 20px 0px;
+	box-shadow: 5px 5px 5px gray;
 }
 /*Nintendo banner*/
 #ninbanner {

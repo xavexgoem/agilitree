@@ -21,28 +21,13 @@ pageEncoding="ISO-8859-1"%>
       </div>
 
       <div id="contentmain">
-        <div id="wrapintro">
+        <div class="wrapbigtext">
           <p>Carl's Card Shop opened in March 2019. We have the best
           selection of table top games and products in the Eau Claire area.
           Several days a week we host various events for anyone to join. If
           you are a new or experienced player come on down and check out all
           that is happening. Be sure to check our <a href="calendar.jsp">calendar!</a>
           We'd be nothing if not for that!</p>
-        </div>
-        <div id="ygo">
-          <div id="ygobanner">
-            <a href=""><img src=""></a>
-          </div>
-          <div id="ygodesc">
-            <h2 class="banner">Yu-Gi-Oh!</h2>
-            <p>Blah blah content. Something something new deck I'm just
-            gonna go to sleep after I test the capacity of this box by just
-            kinda casually typing and typing until it gets to where I need it
-            to be. I'll worry about the whole fixing the image to the left
-            later.</p>
-            <br>
-            <p>Also, pixels aren't absolute, who knew? Me, I knew.</p>
-          </div>
         </div>
 
         <div id="calendarwrapper">
@@ -51,21 +36,22 @@ pageEncoding="ISO-8859-1"%>
           <script type="text/javascript" src="assets/js/calendar.js"></script>
           <script type="text/javascript" src="assets/js/events.js"></script>
         </div>
-
-                <br>
+        <div id="ygo">
+          <div id="ygobanner">
+            <a href=""><img src=""></a>
+          </div>
+          <div id="ygodesc">
+            <h2 class="banner">Yu-Gi-Oh!</h2>
+            <p>Players in good financial standing are asked to please follow all rules.</p>
+          </div>
+        </div>
         <div id="mtg">
           <div id="mtgbanner">
             <a href=""><img src=""></a>
           </div>
           <div id="mtgdesc">
             <h2 id="mtgt">Magic: The Gathering</h2>
-            <p>Blah blah content. Something something new deck I'm just
-            gonna go to sleep after I test the capacity of this box by just
-            kinda casually typing and typing until it gets to where I need it
-            to be. I'll worry about the whole fixing the image to the left
-            later.</p>
-            <br>
-            <p>Also, pixels aren't absolute, who knew? Me, I knew.</p>
+            <p>We reserve the right to ban you for monoblue decks.</p>
           </div>
         </div>
         <br>
@@ -84,7 +70,8 @@ pageEncoding="ISO-8859-1"%>
             <p>Also, pixels aren't absolute, who knew? Me, I knew.</p>
           </div>
         </div>
-
+        <div style="clear: both;"></div> <!--  so floated elements don't go past contentmain -->
+		<div class="wrapbigtext">Have any questions? <a href="contact.jsp">Contact us!</a> We have a form.</div>
       </div>
     </div>
   </body>
