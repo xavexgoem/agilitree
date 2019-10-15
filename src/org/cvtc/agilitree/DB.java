@@ -14,7 +14,7 @@ public class DB {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			this.connection = DriverManager.getConnection(
-					 "jdbc:mysql://localhost:3306/agilitree?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
+					 "jdbc:mysql://localhost:3306/agilitree?useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=America/Chicago", "root", "");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
