@@ -50,8 +50,8 @@ pageEncoding="ISO-8859-1"%>
             <a href=""><img src=""></a>
           </div>
           <div id="mtgdesc">
-            <h2 id="mtgt">Magic: The Gathering</h2>
-            <p>We reserve the right to ban you for monoblue decks.</p>
+            <h2 class="banner">Magic: The Gathering</h2>
+            <p>We reserve the right to ban you for your obnoxious control decks.</p>
           </div>
         </div>
         <br>
@@ -60,23 +60,18 @@ pageEncoding="ISO-8859-1"%>
             <a href=""><img src=""></a>
           </div>
           <div id="nindesc">
-            <h2 id="nint">Nintendo</h2>
-            <p>Blah blah content. Something something new game I'm just
-            gonna go to sleep after I test the capacity of this box by just
-            kinda casually typing and typing until it gets to where I need it
-            to be. I'll worry about the whole fixing the image to the left
-            later.</p>
-            <br>
-            <p>Also, pixels aren't absolute, who knew? Me, I knew.</p>
+            <h2 class="banner">Nintendo</h2>
+            <p>We have everything! Super Mario Brothers 1-3, Zelda 1 and 2, Punch Out, Duck Hunt, etc.</p>
           </div>
         </div>
         <div style="clear: both;"></div> <!--  so floated elements don't go past contentmain -->
 		<div class="wrapbigtext">Have any questions? <a href="contact.jsp">Contact us!</a> We have a form.</div>
-      </div>
-    </div>
-  </body>
-  <br>
-  <footer>
+		<footer>
     2019 Carl's Card Shop<br> For more information, help, or any of
     the above, contact:<br> (1)555-555-5555 OR email dummy@gmail.com
   </footer>
+      </div>
+      
+    </div>
+  </body>
+  

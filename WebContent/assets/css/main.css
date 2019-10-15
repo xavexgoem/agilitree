@@ -164,7 +164,7 @@ body {
 	color: #dbdbdb;
 	overflow: hidden;
 	border: 1.5px solid rgba(160, 39, 155, 0.2);
-	border-radius: 20px 20px 20px 0px;
+	border-radius: 20px 20px 20px 20px;
 	box-shadow: 5px 5px 5px gray;
 }
 
@@ -206,7 +206,7 @@ div#ygodesc h2#ygot {
 	color: #dbdbdb;
 	overflow: hidden;
 	border: 1.5px solid rgba(160, 39, 155, 0.2);
-	border-radius: 20px 20px 20px 0px;
+	border-radius: 20px 20px 20px 20px;
 	box-shadow: 5px 5px 5px gray;
 }
 
@@ -248,7 +248,7 @@ div#mtgdesc h2#mtgt {
 	color: #dbdbdb;
 	overflow: hidden;
 	border: 1.5px solid rgba(221, 47, 47, 0.2);
-	border-radius: 20px 20px 20px 0px;
+	border-radius: 20px 20px 20px 20px;
 	box-shadow: 5px 5px 5px gray;
 }
 /*Nintendo banner*/
@@ -278,10 +278,10 @@ div#nindesc h2#nint {
 }
 
 footer {
+	background-color: #333;
 	top: 15px;
 	margin: 0 auto;
 	text-align: center;
-	width: 800px;
 	position: relative;
 	color: #dbdbdb;
 	overflow: hidden;
@@ -303,26 +303,8 @@ div#login {
 	text-color: #2ac4c7;
 }
 
-button[type=submit] {
-	background-color: #35373c;
-	font-size: 10px;
-	height: 18px;
-	border: 1px outset #2ac4c7;
-	color: #2ac4c7;
-	padding-top: 3px;
-}
-
 label {
 	font-size: 16px;
-}
-
-
-input[type=text], input[type=password] {
-	font-size: 12px;
-	width: 80px;
-	background-color: #35373c;
-	color: #2ac4c7;
-	border: 1px outset #2ac4c7;
 }
 
 /* Dropdown Button */
