@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="assets/css/calendar.css"/>
   </head>
   <body>
+  	<a href="index.jsp" id="home">Home</a>
+  	
+  	<div>
+  		<ul id="key">
+  			<li id="magic">Magic</li>
+  			<li id="yugi">Yu-Gi-Oh!</li>
+  			<li id="dd">Dungeons and Dragons</li>
+  		</ul>
+  	</div>
     <div id="calendar">
 
     </div>

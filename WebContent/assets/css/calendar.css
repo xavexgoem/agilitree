@@ -1,10 +1,14 @@
+body {
+	background-color: #050505;
+}
+
 .cld-main{
     position: relative;
     width: 60%;
     left: 20%;
 }
 .cld-main a{
-    color: #7B00FF;
+    color: white;
 }
 .cld-datetime{
     position: relative;
@@ -13,6 +17,7 @@
     max-width: 300px;
     margin: auto;
     overflow: hidden;
+    color: #FDF5E6;
 }
 .cld-datetime .today{
     position: relative;
@@ -80,7 +85,7 @@
 
 .cld-title1{
     font-size: 15px;
-    color: green;
+    color: #00CED1;
     display: block;
     margin: 0;
     font-weight: normal;
@@ -88,7 +93,7 @@
 
 .cld-title2{
     font-size: 15px;
-    color: blue;
+    color: #00FA9A;
     display: block;
     margin: 0;
     font-weight: normal;
@@ -96,7 +101,7 @@
 
 .cld-title3{
     font-size: 15px;
-    color: red;
+    color: #9ACD32;
     display: block;
     margin: 0;
     font-weight: normal;
@@ -104,6 +109,11 @@
 .cld-day:hover{
     background: #eee;
 }
+
+.cld-number {
+	color: #050505;
+}
+
 .cld-number.eventday{
     font-weight: bold;
 }
@@ -126,9 +136,45 @@
     width: 20%;
     border-style: solid;
     border-width: .5px;
+    background-color: #D3D3D3;
 }
 
 .descDiv p {
     text-align: center;
+    color: #2F4F4F;
 }
+
+.cld-number, .cld-labels {
+	color: #FDF5E6;
+}
+
+#home { 
+	color: #FDF5E6;
+	text-decoration: none;
+	font-size: 1.5em;
+}
+
+#home:hover {
+	color: #00FFFF;
+}
+
+#key {
+	float: right;
+}
+
+#magic {
+	color: #00CED1;
+}
+
+#yugi {
+	color: #00FA9A;
+}
+
+#dd {
+	color: #9ACD32;
+}
+
+
+
+
 

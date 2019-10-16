@@ -49,7 +49,7 @@ function createCalendar(calendar, element, adjuster){
         var rwd = document.createElement('div');
         rwd.className += " cld-rwd cld-nav";
         rwd.addEventListener('click', function(){createCalendar(calendar, element, -1);} );
-        rwd.innerHTML = '<svg height="15" width="15" viewBox="0 0 75 100" fill="rgba(0,0,0,0.5)"><polyline points="0,50 75,0 75,100"></polyline></svg>';
+        rwd.innerHTML = '<svg height="15" width="15" viewBox="0 0 75 100" fill="rgba(253, 245, 230,0.5)"><polyline points="0,50 75,0 75,100"></polyline></svg>';
         datetime.appendChild(rwd);
 
       var today = document.createElement('div');
@@ -60,7 +60,7 @@ function createCalendar(calendar, element, adjuster){
         var fwd = document.createElement('div');
         fwd.className += " cld-fwd cld-nav";
         fwd.addEventListener('click', function(){createCalendar(calendar, element, 1);} );
-        fwd.innerHTML = '<svg height="15" width="15" viewBox="0 0 75 100" fill="rgba(0,0,0,0.5)"><polyline points="0,0 75,50 0,100"></polyline></svg>';
+        fwd.innerHTML = '<svg height="15" width="15" viewBox="0 0 75 100" fill="rgba(253, 245, 230,0.5)"><polyline points="0,0 75,50 0,100"></polyline></svg>';
         datetime.appendChild(fwd);
 
       mainSection.appendChild(datetime);
@@ -113,14 +113,14 @@ function createCalendar(calendar, element, adjuster){
         
       for(var n = 0; n < calendar.Model.length; n++){
         var evDate = calendar.Model[n].Date;
-        var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month + 1, (i+1));
+        var toDate = new Date(calendar.Selected.Year, calendar.Selected.Month + 1, (i + 1));
         if(evDate.getTime() == toDate.getTime()){
           number.className += " eventday";
           var title = document.createElement('span');
           title.className += "cld-title" + calendar.Model[n].Clr;
             
         var descDiv = document.createElement('div');
-        descDiv.innerHTML += '<p>' + "Start Time: " + calendar.Model[n].Time + "<br />" + calendar.Model[n].Desc + '</p>';
+        descDiv.innerHTML += '<p>' + "Start Time: " + calendar.Model[n].StartTime + " to " + calendar.Model[n].EndTime + "<br />" + calendar.Model[n].Desc + '</p>';
         descDiv.className += 'descDiv';
         descDiv.id += 'desc' + calendar.Model[n].DId;
         descDiv.style.display = "none";
